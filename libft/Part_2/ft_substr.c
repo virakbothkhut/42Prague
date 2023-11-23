@@ -6,7 +6,7 @@
 /*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:25:06 by vkhut             #+#    #+#             */
-/*   Updated: 2023/10/20 10:28:19 by vkhut            ###   ########.fr       */
+/*   Updated: 2023/10/24 17:14:30 by vkhut            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int	main(void)
 	size_t			length;
 	char			*substr;
 
-	str1 = "Hello,World";
-	start = 7;
-	length = 5;
+	str1 = "geeks";
+	start = 3;
+	length = 3;
 	substr = fr_substr(str1, start, length);
 	if (substr != NULL)
 	{
