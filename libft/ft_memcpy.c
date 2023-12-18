@@ -6,13 +6,13 @@
 /*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:52:56 by vkhut             #+#    #+#             */
-/*   Updated: 2023/11/21 23:19:14 by vkhut            ###   ########.fr       */
+/*   Updated: 2023/12/18 17:32:45 by vkhut            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memory(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	void	*dest_ptr;
 
@@ -23,11 +23,3 @@ void	*ft_memory(void *dest, const void *src, size_t n)
 		*(char *)dest++ = *(char *)src++;
 	return (dest_ptr);
 }
-
-// int	main(void)
-// 	{
-// 		char	dest[6];
-
-// 		char src[] = "You're Handsome";
-// 		ft_memory(dest, src, sizeof(src));
-// 	}

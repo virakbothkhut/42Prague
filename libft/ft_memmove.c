@@ -6,7 +6,7 @@
 /*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:53:09 by vkhut             #+#    #+#             */
-/*   Updated: 2023/11/21 23:16:19 by vkhut            ###   ########.fr       */
+/*   Updated: 2023/12/18 16:16:57 by vkhut            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest_ptr);
 }
-
-// int	main(void)
-// {
-// 	char src[] = "Hello";
-
-// 	char dest[5];
-
-// 	char c = ft_memmove(dest, src, sizeof(src));
-
-// 	printf("hey it is", c);
-// }

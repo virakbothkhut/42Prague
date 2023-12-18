@@ -6,7 +6,7 @@
 /*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:54:30 by vkhut             #+#    #+#             */
-/*   Updated: 2023/11/26 04:28:07 by vkhut            ###   ########.fr       */
+/*   Updated: 2023/12/18 16:17:08 by vkhut            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,3 @@ int	ft_memcmp(void const *s1, void const *s2, size_t n)
 	}
 	return (0);
 }
-
-// int	main(void)
-// {
-// 	char	result;
-
-// 	const unsigned char block1[] = {10, 20, 30, 50};
-// 	const unsigned char block2[] = {10, 20, 30, 40};
-// 	result = ft_memcmp(block1, block2, 4);
-// 	printf("%d", result);
-// }

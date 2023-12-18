@@ -6,52 +6,34 @@
 /*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:25:06 by vkhut             #+#    #+#             */
-/*   Updated: 2023/10/24 17:14:30 by vkhut            ###   ########.fr       */
+/*   Updated: 2023/12/18 20:58:00 by vkhut            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*fr_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
+	char	*substr;
 	size_t	i;
+	size_t	len_s;
 
-	str = (char *)malloc(len + 1);
-	if (str == NULL)
-	{
-		exit(1);
-	}
+	if (!s)
+		return (NULL);
+	len_s = ft_strlen(s);
+	if (start >= len_s)
+		return (ft_strdup(""));
+	if (len_s < start + len)
+		len = len_s - start;
+	substr = (char *)malloc(len + 1);
+	if (!substr)
+		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < len && s[start + i])
 	{
-		str[i] = s[start + i - 1];
+		substr[i] = s[start + i];
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
-}
-
-int	main(void)
-{
-	const char		*str1;
-	unsigned int	start;
-	size_t			length;
-	char			*substr;
-
-	str1 = "geeks";
-	start = 3;
-	length = 3;
-	substr = fr_substr(str1, start, length);
-	if (substr != NULL)
-	{
-		printf("original string: %s\n", str1);
-		printf("substring: %s\n", substr);
-		free(substr);
-	}
-	else
-	{
-		printf("Failed to allocate memory for the substring \n");
-	}
-	return (0);
+	substr[i] = '\0';
+	return (substr);
 }

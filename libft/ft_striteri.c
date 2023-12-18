@@ -1,25 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 21:12:22 by vkhut             #+#    #+#             */
+/*   Updated: 2023/12/18 21:12:32 by vkhut            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
- unsigned int i;
+	unsigned int	i;
 
- i =0;
- while (*s)
- {
-    (*f)(i,s);
-    i++;
-    s++;
- }
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		f(i, s + i);
+		i++;
+	}
 }
-
-// void printchar(unsigned int index, char *c)
-// {
-//     printf("Character at index %u:  %c\n", index, *c);
-// }
-
-// int main()
-// {
-//     char *str = "Hello world";
-//     ft_striteri(str, printchar);
-// }

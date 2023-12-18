@@ -1,18 +1,23 @@
-void ft_putendl_fd(char *s, int fd)
-{
-    while (*s)
-    {
-        write(fd, s, 1);
-        s++;
-    }
-    write(fd, "\n", 1);
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 15:01:30 by vkhut             #+#    #+#             */
+/*   Updated: 2023/12/18 17:12:51 by vkhut            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main ()
-{
-    char *s =  "Hello world";
-    int fd = 1;
+#include "libft.h"
 
-    ft_putendl_fd(s, fd);
-    return (0);
+void	ft_putendl_fd(char *s, int fd)
+{
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
+	write(fd, "\n", 1);
 }

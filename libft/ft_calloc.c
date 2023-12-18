@@ -1,33 +1,26 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 14:59:11 by vkhut             #+#    #+#             */
+/*   Updated: 2023/12/18 18:39:30 by vkhut            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void *p;
+	void	*ptr;
 
-	size *= nmemb;
-	p = malloc(size);
-	if (p)
-		ft_bzero(p, size);
-	return (p);
+	if (size != 0 && count > SIZE_MAX / size)
+		return (NULL);
+	ptr = malloc(count * size);
+	if (!ptr)
+		return (NULL);
+	ft_memset(ptr, 0, count * size);
+	return (ptr);
 }
-
-// int main()
-// {
-//     int *numbers = ft_calloc(5, sizeof(int));
-//     char *buffer = ft_calloc(10, sizeof(char));
-//     int *empty_array = ft_calloc(0, sizeof(int));
-
-//     // Display the allocated and zeroed memory addresses
-//     printf("Numbers: %p\n", (void *)numbers);
-//     printf("Buffer: %p\n", (void *)buffer);
-//     printf("Empty Array: %p\n", (void *)empty_array);
-
-//     // Free the allocated memory
-//     free(numbers);
-//     free(buffer);
-//     free(empty_array);
-
-//     return 0;
-// }

@@ -1,38 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 19:23:17 by vkhut             #+#    #+#             */
+/*   Updated: 2023/12/18 19:23:23 by vkhut            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *str)
 {
-    char *pointer;
-    int i;
-    int u;
+	char	*res;
+	size_t	length;
+	size_t	index;
 
-    i = 0;
-    u = (int)ft_strlen(s);
-    pointer = malloc(sizeof(char)*u + 1);
-    if (pointer == NULL)
-        return (NULL);
-    while (s[i])
-    {
-        pointer[i] = s[i];
-        i++;
-    }
-    pointer[i] = '\0';
-    return (pointer);
+	index = 0;
+	length = ft_strlen(str);
+	res = (char *)malloc(sizeof(char) * length + 1);
+	if (res == NULL)
+		return (NULL);
+	while (index < length)
+	{
+		res[index] = str[index];
+		index++;
+	}
+	res[index] = '\0';
+	return (res);
 }
-
-// int main()
-// {
-//     const char *originalString = "Hello, World";
-//     char *duplicateString = ft_strdup(originalString);
-
-//     if (duplicateString == NULL)
-//     {
-//         return (1);
-//     }
-//     printf("Original String: %s\n", originalString);
-//     printf("Duplicated String: %s\n", duplicateString);
-    
-//     free(duplicateString);
-//     return 0;
-// }

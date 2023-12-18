@@ -1,37 +1,38 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 14:56:35 by vkhut             #+#    #+#             */
+/*   Updated: 2023/12/18 14:58:44 by vkhut            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    while(n--)
-    *(unsigned char *)s++ = 0;
+	while (n--)
+		*(unsigned char *)s++ = 0;
 }
 
-
-// int main()
+// int	main(void)
 // {
-//     // Example: Initialize a buffer with some data
-//     char buffer[11] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'};
-
-//     // Display the content of the buffer before zeroing
-//     printf("Before: ");
-//     for (size_t i = 0; i < sizeof(buffer); i++)
-//     {
-//         printf("%c ", buffer[i]);
-//     }
-//     printf("\n");
-
-//     // Use ft_bzero to zero out the buffer
-//     ft_bzero(buffer, sizeof(buffer));
-
-//     // Display the content of the buffer after zeroing
-//     printf("After: ");
-//     for (size_t i = 0; i < sizeof(buffer); i++)
-//     {
-//         printf("%c ", buffer[i]);
-//     }
-//     printf("\n");
-
-//     return 0;
+// 	char buffer[11] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'};
+// 	printf("Before: ");
+// 	for (size_t i = 0; i < sizeof(buffer); i++)
+// 	{
+// 		printf("%c ", buffer[i]);
+// 	}
+// 	printf("\n");
+// 	ft_bzero(buffer, sizeof(buffer));
+// 	printf("After: ");
+// 	for (size_t i = 0; i < sizeof(buffer); i++)
+// 	{
+// 		printf("%c ", buffer[i]);
+// 	}
+// 	printf("\n");
+// 	return (0);
 // }

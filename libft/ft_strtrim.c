@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vkhut <vkhut@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/18 16:02:52 by vkhut             #+#    #+#             */
+/*   Updated: 2023/12/18 16:12:32 by vkhut            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -39,7 +50,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	while (*(s1 + start) && char_check(set, *(s1 + start)))
 		start++;
-	end = ft_strlen	(s1);
+	end = ft_strlen(s1);
 	while (end > start && char_check(set, *(s1 + (end - 1))))
 		end--;
 	trim = str_new(end - start);
@@ -53,24 +64,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	*(trim + i) = '\0';
 	return (trim);
-}
-
-int	main(void)
-{
-	char *original = "   Hello, C!            ";
-	char *set = " ";
-
-	char *trimmed = ft_strtrim(original, set);
-
-	if (trimmed != NULL)
-	{
-		printf("Original: \"%s\"\n", original);
-		printf("Trimmed: \"%s\"\n", trimmed);
-		free(trimmed); // Free the allocated memory
-	}
-	else
-	{
-		printf("Trimming failed.\n");
-	}
-	return (0);
 }
